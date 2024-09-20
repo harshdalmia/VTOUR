@@ -1,20 +1,22 @@
+// lib/locs/location_data.dart
+
 class LocationData {
   static List<Map<String, String>> hotLocations = [
     {
       'name': 'McDonalds',
-      'image': 'lib/image/hello.jpg',  // Path to the McDonalds image
+      'image': 'C:/dev/githubrepo/VTOUR/lib/image/WhatsApp Image 2024-09-20 at 17.59.05_ae6d0f12.jpg',  // Path to the McDonalds image
     },
     {
       'name': 'Zaitoon',
-      'image': 'lib/image/hello.jpg',  // Path to the Zaitoon image
+      'image': 'C:/dev/githubrepo/VTOUR/lib/image/WhatsApp Image 2024-09-20 at 17.59.05_ae6d0f12.jpg',  // Path to the Zaitoon image
     },
     {
       'name': 'Burger King',
-      'image': 'lib/image/hello.jpg',  // Path to the Burger King image
+      'image': 'C:/dev/githubrepo/VTOUR/lib/image/WhatsApp Image 2024-09-20 at 17.59.05_ae6d0f12.jpg',  // Path to the Burger King image
     },
     {
       'name': 'Dominos',
-      'image': 'lib/image/hello.jpg',  // Path to the Dominos image
+      'image': 'assets/dominos.jpg',  // Path to the Dominos image
     },
   ];
 
@@ -39,17 +41,17 @@ class LocationData {
   static List<Map<String, String>> funSpots = [
     {
       'name': 'Fun World',
-      'image': 'assets/funworld.jpg',
+      'image': 'lib/image/hello.jpg',
       'description': 'A local amusement park with various rides and attractions.',
     },
     {
       'name': 'Movie Max',
-      'image': 'assets/moviemax.jpg',
+      'image': 'lib/image/hello.jpg',
       'description': 'A popular cinema hall for all the latest movies.',
     },
     {
       'name': 'Bowling Alley',
-      'image': 'assets/bowling.jpg',
+      'image': 'lib/image/hello.jpg',
       'description': 'Enjoy a fun time at the bowling alley with friends and family.',
     },
   ];
