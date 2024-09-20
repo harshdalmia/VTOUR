@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'journey_screen.dart';
+import 'package:tripquest/SearchScreen/search_screen.dart';
+import 'package:tripquest/Trip/share_trip_screen.dart'; // Import the new ShareTripScreen
 
 class HomeScreen extends StatelessWidget {
   final TextEditingController _searchController = TextEditingController();
@@ -9,42 +10,38 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        title: RichText(
-          text: TextSpan(
-            children: [
-              TextSpan(
-                text: 'V',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.blue, 
-                ),
-              ),
-              TextSpan(
-                text: 'Tour',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.normal,
-                  color: Colors.white, 
-                ),
-              ),
-            ],
-          ),
-        ),
-        backgroundColor: Colors.black, // Background color of AppBar
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+        backgroundColor: Colors.black,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            SizedBox(height: 40), // Space from the top
+            RichText(
+              text: TextSpan(
+                children: [
+                  TextSpan(
+                    text: 'V',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue,
+                    ),
+                  ),
+                  TextSpan(
+                    text: 'Tour',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.normal,
+                      color: Colors.white,
+                    ),
+                  ),
+                ],
+              ),
+            ),
             Container(
-              height: 50,
+              width: MediaQuery.of(context).size.width * 0.4, // Set the width
+              height: 40,
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               decoration: BoxDecoration(
-                color: Colors.grey[900], // Background color for the search bar
+                color: Colors.grey[900],
                 borderRadius: BorderRadius.circular(25.0),
                 border: Border.all(color: Colors.grey[700]!),
               ),
@@ -55,36 +52,61 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: TextField(
                       controller: _searchController,
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(color: Colors.black),
                       decoration: InputDecoration(
-                        hintText: 'Where should the journey go?',
+                        hintText: 'Where to?',
                         hintStyle: TextStyle(color: Colors.white54),
                         border: InputBorder.none,
                       ),
                     ),
                   ),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.greenAccent,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                    ),
+                  IconButton(
+                    icon: Icon(Icons.search, color: Colors.greenAccent),
                     onPressed: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => JourneyScreen(),
+                          builder: (context) => SearchScreen(),
                         ),
                       );
                     },
-                    child: Text(
-                      'Plan for free',
-                      style: TextStyle(color: Colors.black),
-                    ),
                   ),
                 ],
+              ),
+            ),
+          ],
+        ),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(height: 80), // Adjusted space to lower the button
+            // Share Your Trip Button
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ShareTripScreen(),
+                  ),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blue, 
+                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 100.0), // Adjusted size
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30.0), // Rounded corners
+                ),
+              ),
+              child: Text(
+                'Share Your Trip',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16, // Slightly smaller font size
+                ),
               ),
             ),
             Expanded(
@@ -95,10 +117,4 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: HomeScreen(),
-  ));
 }

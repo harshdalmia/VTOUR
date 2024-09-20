@@ -5,9 +5,18 @@ class Discoverscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(title: Text('Discover')),
+      appBar: AppBar(
+        title: Text(
+          'Discover',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.black,
+      ),
       body: Center(
-        child: Text('Discover Screen', style: TextStyle(fontSize: 24)),
+        child: Text(
+          'Discover Screen',
+          style: TextStyle(color: Colors.white, fontSize: 20),
+        ),
       ),
     );
   }

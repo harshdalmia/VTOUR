@@ -5,9 +5,15 @@ class BookingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(title: Text('Booking')),
+      appBar: AppBar(
+        title: Text(
+          'Booking',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.black, // Dark app bar
+      ),
       body: Center(
-        child: Text('Booking Screen', style: TextStyle(fontSize: 24)),
+        child: Text('Booking Screen', style: TextStyle(color:Colors.white,fontSize: 24)),
       ),
     );
   }

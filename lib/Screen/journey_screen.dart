@@ -50,7 +50,10 @@ class _JourneyScreenState extends State<JourneyScreen> {
     return Scaffold(
       backgroundColor: Colors.black, // Set dark background
       appBar: AppBar(
-        title: Text('Plan Your Journey'),
+        title: Text(
+          'Plan Your Journey',
+          style: TextStyle(color: Colors.white),
+        ),
         backgroundColor: Colors.black, // Dark app bar
       ),
       body: Padding(
@@ -299,7 +302,9 @@ class _JourneyScreenState extends State<JourneyScreen> {
                 }
               },
               child: Text(
-                currentQuestionIndex == questions.length - 1 ? 'Finish' : 'Next', // Change button text to "Finish" on the last question
+                currentQuestionIndex == questions.length - 1
+                    ? 'Finish'
+                    : 'Next', // Change button text to "Finish" on the last question
                 style: TextStyle(
                   color: Colors.white, // White text
                   fontSize: 16.0,
@@ -328,11 +333,12 @@ class OptionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: isSelected ? Colors.grey[800] : Colors.grey[850], // Dark grey shades
+          backgroundColor: isSelected
+              ? Colors.grey[800]
+              : Colors.grey[850], // Dark grey shades
           foregroundColor: Colors.white, // White text
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30.0), // Rounded edges
@@ -364,11 +370,12 @@ class DestinationOption extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          backgroundColor: isSelected ? Colors.grey[800] : Colors.grey[850], // Dark grey shades
+          backgroundColor: isSelected
+              ? Colors.grey[800]
+              : Colors.grey[850], // Dark grey shades
           foregroundColor: Colors.white, // White text
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(30.0), // Rounded edges
