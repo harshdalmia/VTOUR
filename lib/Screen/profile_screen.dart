@@ -5,9 +5,15 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      appBar: AppBar(title: Text('Travel Plans')),
+      appBar: AppBar(
+        title: Text(
+          'Travel Plans',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.black,
+      ),
       body: Center(
-        child: Text('Travel Screen', style: TextStyle(fontSize: 24)),
+        child: Text('Travel Screen', style: TextStyle(color:Colors.white,fontSize: 24)),
       ),
     );
   }
